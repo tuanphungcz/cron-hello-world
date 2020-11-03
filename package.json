@@ -1,0 +1,22 @@
+{
+  "name": "cron-hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scheduled-job.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digilifecz123/cron-hello-world.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digilifecz123/cron-hello-world/issues"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "homepage": "https://github.com/digilifecz123/cron-hello-world#readme"
+}
