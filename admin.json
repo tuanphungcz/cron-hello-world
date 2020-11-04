@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "reality-scraper",
+  "private_key_id": "e48a68583cabd2bc42455b70dc8d15707d6de891",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCj95vq4v0aw+Gj\nfZ373zzkHO35jFQcDP+0Wlnmfj+LZAfE/MJ/ffvuGHHtQBk7YERrxUfsf+XmHGEA\nv8zmTsLOWD1eTONfUtHWCWos64p3A1EmUyUyQnsNPGhzbFV+m7sKuA6iUE0QvdoZ\n4IwpeWlWSkivU43m3/olDo1dUeOXx443yFeey6sBxrS6vnPtIMnuOo65yaeXtMrP\nyo9pCLt/SXodNaUsZn7oN8q8vHZZYw/DE+cMM/bFIA1z8A1v9NHkUiavZI7RjaI9\nYjt7OWApimOpEFOFU5HXg7ficZ7pfbCoxHEvD0gVZBqX8NXDUcf/h6OMCibso01I\nNBRSMEKVAgMBAAECggEAO7IGPfnuFDSEjbVKM00PKi2uJlCEvsGsxsiuOlB0ahc9\nDObJGQmRExorQCk6BngB8QqeKOhXlvN2DYPG4YKDQgS2MwLjNO0+ICLFWR1YCARZ\nIw7aV/YEPsljbcJfTfz8l+ZyzX1W0WWNZiZuYRsm0pew5sQQwaGBvMQTi4ooxjT3\nx+OAC3NKtsPWaT+ce/++PpCcCl6MV+CiWaldueoAIrMX+PLqE4e1cleY7JaHTFHs\n4uKXEiSI6EfaJZ8fT/0Yj9cTgBXc9aUAWLfVw/e5PDhLKEAhwbiRAk4ERVPmOpfZ\nY1shtEzmHhnZIxs0o+cNRP/Cqc9Jux9T3cZsuEdqcQKBgQDQ+VZjS87oWSkwIZck\nIfUASrKcs1KFmu5e33g+miVEZ9bktCvhym6VdFxR1vFhqyztd9u41qkmUS+y//Xp\nLDNLgZk6quVrKbpYWDpLMrjdsQghMSwhinjISgLNnMrFAkT2CPyzOg+JpDDIZEyO\n2EXT5lCqnYMTerez21mNpABphwKBgQDI3YDY6VUwaxZ9CIBjiiY6L3PrCm3KaSFL\nxO97/YrRz4blyx2O9GzOsXmWH0PZuZJDi7q2jHQUFNOdpTB27rCnFA8xNXNIcNPe\nPaYhgtpoa7QB1Fee1yppeUHXpzNHyXUzA9BxWzML9gds18utdNtF5dT/GE7REcZb\nst6ejmJKAwKBgAiF8ukP4XuGj3CAHjsCC40cftZ3VelPHWPPN4dOIDD/Dzu6wYNv\nDz2XRmCsJKI4KhfxaIvMbY+7hfeGCxCclecBfS9wYvUQ+aG6z33brsCUBOHdsJAZ\npr18j0q1l2uboRZr3Wqt9o5FnRu/Q4Qb/BUdcrLSw9LakX2Ld8aYJtAnAoGAb31C\nvyMD/dPyr4PAf392qGUeWh93wRmJOZ0dsBySqNIfdfy/c1GH81HewsynxHmUDZnJ\nEPn0lBDbRG0j8V+a/aHMrOuWCWdWscxWIdOXls3xI/LQj4GuMMz1FtXfSMExJBfB\n4qlUNBdjF67Phn+OFcXz64N6e+D50Hv/xNITDDECgYEAs2n/6gVEERCoGpmSnuh0\n6H2R1xBZmcBEj0+5jR2bECQKOVqAFUc39NAgDD1RBReOoFpTMyJUauxsXeTlYPsG\n9XVoZ/jk6iVliXBhBXHR479f5dDT1THHbyYz48PP53FFs6RllgmDy6pkOxrE//ty\nWWkGaBFN0AN6pEsyMMm6qNM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-bb4lm@reality-scraper.iam.gserviceaccount.com",
+  "client_id": "103166931095829510669",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bb4lm%40reality-scraper.iam.gserviceaccount.com"
+}

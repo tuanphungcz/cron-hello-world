@@ -16,7 +16,13 @@
     "url": "https://github.com/digilifecz123/cron-hello-world/issues"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
-  "homepage": "https://github.com/digilifecz123/cron-hello-world#readme"
+  "homepage": "https://github.com/digilifecz123/cron-hello-world#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "firebase-admin": "^9.3.0",
+    "lodash": "^4.17.20",
+    "puppeteer": "^5.4.1"
+  }
 }
