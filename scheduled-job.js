@@ -1,5 +1,6 @@
 const admin = require("firebase-admin");
-const { last, get, size } = require("lodash/fp");
+const { last, get, size, map } = require("lodash/fp");
+var nodemailer = require("nodemailer");
 
 const puppeteer = require("puppeteer");
 const $ = require("cheerio");
@@ -9,6 +10,17 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://reality-scraper.firebaseio.com",
   authDomain: "reality-scraper.firebaseapp.com",
+});
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "realityfrontend@gmail.com",
+    pass: "Tuan123?",
+  },
 });
 
 const db = admin.database();
@@ -33,7 +45,7 @@ const getPropertyDetails = (element) => {
 
   const price = $("span.price.ng-scope", element).text().trim();
 
-  const properyId = link.substring(link.lastIndexOf("/") + 1);
+  const propertyId = link.substring(link.lastIndexOf("/") + 1);
 
   return {
     title,
@@ -41,7 +53,7 @@ const getPropertyDetails = (element) => {
     imageUrl,
     subtitle,
     price,
-    properyId,
+    propertyId,
   };
 };
 
@@ -73,14 +85,14 @@ const getRealities = async (propertiesById) => {
           imageUrl,
           subtitle,
           price,
-          properyId,
+          propertyId,
         } = getPropertyDetails(element);
 
-        const currentProperty = get(propertiesById, properyId);
+        const currentProperty = get(propertyId, propertiesById);
 
         const hasDifferentPrice =
           currentProperty &&
-          last(get(currentProperty, "price")).ammount !== price;
+          last(get("price", currentProperty)).ammount !== price;
 
         if (currentProperty) {
           if (hasDifferentPrice) {
@@ -96,7 +108,7 @@ const getRealities = async (propertiesById) => {
             updatedPriceProperties.push(link);
 
             return returnpropertiesRef
-              .ref(properyId)
+              .ref(propertyId)
               .update(propertyWithUpdatedPrice, (err) => {
                 if (err) {
                   console.log({ msg: "Something went wrong", error: err });
@@ -110,17 +122,11 @@ const getRealities = async (propertiesById) => {
           return;
         }
 
-        if (
-          !currentProperty &&
-          title &&
-          subtitle &&
-          price &&
-          link &&
-          imageUrl
-        ) {
+        console.log("title", title);
+        if (!currentProperty && title) {
           results = {
             ...results,
-            [properyId]: {
+            [propertyId]: {
               title,
               subtitle,
               price: [
@@ -130,7 +136,7 @@ const getRealities = async (propertiesById) => {
                 },
               ],
               link,
-              properyId,
+              propertyId,
               imageUrl,
               updatedAt: new Date().toISOString(),
               createdAt: new Date().toISOString(),
@@ -155,6 +161,24 @@ const getRealities = async (propertiesById) => {
     }
 
     if (size(results) > 0) {
+      var mailOptions = {
+        from: "realityfrontend@gmail.com",
+        to: "realityfrontend@gmail.com",
+        subject: `${size(results)} nemovovitosti bylo pridano`,
+        text: `${map(
+          (item) => `https://sreality.cz${item.link}` + "\n",
+          results
+        )}`,
+      };
+
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
+
       propertiesRef.update(results, (err) => {
         if (err) {
           console.log({ msg: "Something went wrong", error: err });

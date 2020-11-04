@@ -24,6 +24,7 @@
     "cheerio": "^1.0.0-rc.3",
     "firebase-admin": "^9.3.0",
     "lodash": "^4.17.20",
+    "nodemailer": "^6.4.14",
     "puppeteer": "^5.4.1"
   }
 }
