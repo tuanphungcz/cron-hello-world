@@ -59,8 +59,11 @@ const getPropertyDetails = (element) => {
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// const URL =
+//   "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000&bez-aukce=1";
+
 const URL =
-  "https://www.sreality.cz/hledani/prodej/byty/praha?plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000";
+  "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&stari=tyden&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000&strana=2";
 
 const getRealities = async (propertiesById) => {
   try {
@@ -73,7 +76,7 @@ const getRealities = async (propertiesById) => {
     let alreadyInDb = [];
     let updatedPriceProperties = [];
 
-    for (const pageNumber of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+    for (const pageNumber of [...Array(10).keys()]) {
       await page.goto(URL + "&strana=" + pageNumber);
       await wait(1000);
       const html = await page.$eval("html", (e) => e.outerHTML);
