@@ -63,12 +63,13 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 //   "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000&bez-aukce=1";
 
 const URL =
-  "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&stari=tyden&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000&strana=2";
+  "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&stari=tyden&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000";
 
 const getRealities = async (propertiesById) => {
   try {
     const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      // headless: false,
     });
     const page = await browser.newPage();
 
@@ -110,22 +111,22 @@ const getRealities = async (propertiesById) => {
 
             updatedPriceProperties.push(link);
 
-            return returnpropertiesRef
-              .ref(propertyId)
-              .update(propertyWithUpdatedPrice, (err) => {
+            db.ref(`/properties/${propertyId}`).update(
+              propertyWithUpdatedPrice,
+              (err) => {
                 if (err) {
                   console.log({ msg: "Something went wrong", error: err });
                 } else {
                   console.log({ msg: "user created sucessfully" });
                 }
-              });
+              }
+            );
           }
 
           alreadyInDb.push(link);
           return;
         }
 
-        console.log("title", title);
         if (!currentProperty && title) {
           results = {
             ...results,
