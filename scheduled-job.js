@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "realityfrontend@gmail.com",
-    pass: "Tuan123?",
+    pass: "lmU3FT^)yZqo5.&0h*CN",
   },
 });
 
