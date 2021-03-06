@@ -63,7 +63,7 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 //   "https://www.sreality.cz/hledani/prodej/byty/praha?vlastnictvi=osobni&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000&bez-aukce=1";
 
 const URL =
-  "https://www.sreality.cz/hledani/prodej/byty/praha?velikost=1%2B1,2%2Bkk,2%2B1&vlastnictvi=osobni&plocha-od=30&plocha-do=10000000000&cena-od=0&cena-do=5000000";
+  "https://www.sreality.cz/hledani/prodej/byty/praha?&vlastnictvi=osobni&plocha-do=10000000000&cena-od=0&cena-do=5000000";
 
 const getRealities = async (propertiesById) => {
   try {
